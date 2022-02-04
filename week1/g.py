@@ -1,5 +1,9 @@
-n = input()
-summ = 0
-for i in range(0,len(n)):
-    summ += int(n[i])*(2**(len(n)-i))//2
-print(summ)
+s = input()
+n = len(s)
+def dec(s, i, ans):
+    if i == n:
+        print(ans)
+        return 
+    ans += int(s[i]) * (2 ** (n - 1 - i))
+    return dec(s, i + 1, ans)
+dec(s, 0, 0)
